@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Naomi",
+    "title": "A Great Lady",
+    "excerpt": "This wondrous beast ate my sandwich."
+  },
+  {
+    "id": 2,
+    "name": "Jackson",
+    "title": "A Noble Warrior",
+    "excerpt": "Don't TOUCH my ramen, fool."
+  },
+  {
+    "id": 3,
+    "name": "Erik",
+    "title": "A Keen Mind",
+    "excerpt": "Grind my gears, why don't you?"
+  }
+]
