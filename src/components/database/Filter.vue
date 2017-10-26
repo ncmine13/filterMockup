@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="button-wrapper" v-if="seen">
-      <div class="num" v-on:click="selectPresenter(presenter.id)" v-for="presenter in presenters" :key="presenter.id">{{ presenter.id }}</div>
+      <div class="num" v-on:click="togglePresenter(presenter.id)" v-for="presenter in presenters" :key="presenter.id">{{ presenter.name }}</div>
     </div>
     <presenter :presenter="presenter" v-else></presenter>  
   </div>
@@ -25,14 +25,14 @@
     },
     props: ['presenters'],
     methods: {
-      selectPresenter: function (selectedId) {
-        let pres = this.presenters.filter(presenter => presenter.id === selectedId)
-        this.presenter.name = pres[0].name
-        this.presenter.title = pres[0].title
-        this.presenter.excerpt = pres[0].excerpt
-        this.presenter.id = pres[0].id
-        console.log(this.presenter.id)
-        this.seen = !this.seen
+      togglePresenter: function (selectedId) {
+        if (this.seen) {
+          let pres = this.presenters.filter(presenter => presenter.id === selectedId)[0]
+          this.presenter = pres
+          this.seen = !this.seen
+        } else {
+          this.seen = true
+        }
       }
     },
     components: {

@@ -1,6 +1,6 @@
 <template>
   <div id="db-wrapper">
-    <p> {{msg}} </p>
+    <p> {{ msg }} </p>
     <filterComponent :presenters="presenterData"></filterComponent>
   </div>
 </template>
