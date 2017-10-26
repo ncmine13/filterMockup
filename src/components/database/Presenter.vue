@@ -13,7 +13,7 @@
     data () {
       return {
         btnMsg: 'back to presenter list',
-        name: this.presenter.name,
+        name: this.presenter.first_name,
         title: this.presenter.title,
         excerpt: this.presenter.excerpt
       }

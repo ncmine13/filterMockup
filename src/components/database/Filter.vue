@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="button-wrapper" v-if="seen">
-      <div class="num" v-on:click="togglePresenter(presenter.id)" v-for="presenter in presenters" :key="presenter.id">{{ presenter.name }}</div>
+      <div class="num" v-on:click="togglePresenter(presenter.id_json)" v-for="presenter in presenters" :key="presenter.id_json">{{ presenter.first_name + ' ' + presenter.last_name }}</div>
     </div>
     <presenter :presenter="presenter" v-else></presenter>  
   </div>
@@ -16,10 +16,11 @@
         msg: 'Click me to see presenter',
         seen: true,
         presenter: {
-          name: '',
+          first_name: '',
+          last_name: '',
           title: '',
           excerpt: '',
-          id: 0
+          id_json: 0
         }
       }
     },
@@ -27,12 +28,17 @@
     methods: {
       togglePresenter: function (selectedId) {
         if (this.seen) {
-          let pres = this.presenters.filter(presenter => presenter.id === selectedId)[0]
+          let pres = this.presenters.filter(presenter => presenter.id_json === selectedId)[0]
           this.presenter = pres
           this.seen = !this.seen
         } else {
           this.seen = true
         }
+      }
+    },
+    computed: {
+      fullName: function () {
+        return this.first_name + ' ' + this.last_name
       }
     },
     components: {

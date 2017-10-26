@@ -8,13 +8,14 @@
 
 <script>
   import filterComponent from './Filter'
-  import data from '../../data/mock.json'
+  // import data from '../../data/mock.json'
+  import presenterData from '../../data/mock-presenter.json'
   export default {
     name: 'DatabasePage',
     data () {
       return {
         msg: 'this the database page',
-        presenterData: data
+        presenterData: presenterData
       }
     },
     components: {
