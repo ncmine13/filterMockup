@@ -1,0 +1,17 @@
+[
+  {
+    "header" : "Industry",
+    "id": 1,
+    "values": ["Art", "Science", "Law", "Medicine"]
+  },
+  {
+    "header" : "Year",
+    "id": 2,    
+    "values": ["2015", "2016", "2017"]
+  },
+  {
+    "header" : "Region",
+    "id": 3,    
+    "values": ["West", "Southwest", "Northeast", "Midwest"]
+  }
+]

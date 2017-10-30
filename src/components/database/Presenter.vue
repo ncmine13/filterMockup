@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1> {{ name }} </h1>
+    <h1> {{ fullName }} </h1>
     <p> {{ title }} </p>
     <p> {{ excerpt }} </p>
     <div class="back" v-on:click="back()"> {{ btnMsg }} </div>
@@ -13,9 +13,9 @@
     data () {
       return {
         btnMsg: 'back to presenter list',
-        name: this.presenter.first_name,
         title: this.presenter.title,
-        excerpt: this.presenter.excerpt
+        excerpt: this.presenter.excerpt,
+        fullName: this.presenter.first_name + ' ' + this.presenter.last_name
       }
     },
     props: ['presenter', 'seen'],
@@ -43,7 +43,8 @@
     text-align: center;
     padding: 10px 5px;
     border-radius: 2px;
-    color: black
+    color: black;
+    cursor: pointer;
   }
   .back:hover {
     margin-top: 43px;
