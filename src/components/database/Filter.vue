@@ -2,7 +2,7 @@
   <div>
     <div class="filter-header" :key="filter.id" v-for="filter in filters">
       {{ filter.header }}
-      <div></div>
+      <div class="filter-subcat" :key="value" v-for="value in filter.values"> {{ value }} </div>
     </div>
   </div>  
 </template>
@@ -15,7 +15,7 @@
         msg: 'this is new filter meszage',
         filter: {
           header: '',
-          cats: [],
+          values: [],
           id: 0
         }
       }
@@ -26,6 +26,12 @@
 
 <style>
   .filter-header {
-    font-size: 16px;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .filter-subcat {
+    font-size: 14px;
+    padding-left: 10px;
+    margin-bottom: 5px;
   }
 </style>
